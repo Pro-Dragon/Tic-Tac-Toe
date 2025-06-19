@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #112D4E;
+    text-align: center;
+    color: #F9F7F7;
+}
+.MessageBox {
+    height: 100vh;
+    width: 100%;
+    background-color: #ECEFCA;
+    color: #112D4E;
+}
+h1{
+    font-size: 12vh;
+}
+.GameBox {
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Board {
+    height: 60vh;
+    width: 60vh;
+    background-color: #112D4E;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+#ResetButton {
+    height: 40px;
+    width: 100px;
+    border-radius: 10px;
+    font-size: 18px;
+    color: #DBE2EF;
+    background-color: #3F72AF;
+    font-weight: bolder;
+    border: none;
+}
+.Box {
+    height: 18vh;
+    width: 18vh;
+    font-size: 8vmin;
+    background-color: #424242;
+    justify-self: center;
+    align-self: center;
+    border-radius: 20px;
+    border: none;
+    color: #0ABAB5;
+    font-weight:1000;
+    box-shadow: 0 0 10px black;
+}
+.Box:hover, #ResetButton:hover {
+    box-shadow: 0 0 5px #0ABAB5;
+}
+
+.hide {
+    display: none;
+}
+
+.newbtn:hover, .btn:hover {
+    box-shadow: 0 0 5px rgb(18, 21, 8);
+}
+.newbtn {
+    height: 40px;
+    width: 200px;
+    border-radius: 10px;
+    font-size: 18px;
+    color: #ffffff;
+    background-color: black;
+    font-weight: bolder;
+    border: none;
+}
+.IntroSection {
+    height: 80px;
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 350px;
+}
+.btn {
+    height: 40px;
+    width: 200px;
+    border-radius: 10px;
+    font-size: 18px;
+    color: #ffffff;
+    background-color: black;
+    font-weight: bolder;
+    border: none;
+}
+.header {
+    height:350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.message {
+    height: 30vh;
+    width: 100%;
+    color: #112D4E;
+}
+.ResultSection{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 12vh;
+}
