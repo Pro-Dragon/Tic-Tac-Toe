@@ -170,6 +170,21 @@ const Starter1 = (index, PrvIndex) => {
     else if (PrvIndex === null && index != 4) {
         ComputerMove(4);
     }
+    else if(PrvIndex === 2 && index === 6 && moves === 3 || PrvIndex === 6 && index === 2 && moves === 3) {
+        ComputerMove(1);
+    }
+    else if(PrvIndex === 7 && index === 2 && moves === 3 || PrvIndex === 7 && index === 5 && moves === 3 || PrvIndex === 5 && index === 6 && moves === 3 || PrvIndex === 5 && index === 7 && moves === 3) {
+        ComputerMove(8);
+    }
+    else if(PrvIndex === 7 && index === 0 && moves === 3 || PrvIndex === 7 && index === 3 && moves === 3 || PrvIndex === 3 && index === 8  && moves === 3 || PrvIndex === 3 && index === 7 && moves === 3) {
+        ComputerMove(6);
+    }
+    else if(PrvIndex === 1 && index === 5 && moves === 3 || PrvIndex === 1 && index === 8 && moves === 3 || PrvIndex === 5 && index === 0  && moves === 3 || PrvIndex === 5 && index === 1 && moves === 3) {
+        ComputerMove(2);
+    }
+    else if(PrvIndex === 3 && index === 2 && moves === 3 || PrvIndex === 3 && index === 1 && moves === 3 || PrvIndex === 1 && index === 3 && moves === 3 || PrvIndex === 1 && index === 6 && moves === 3) {
+        ComputerMove(0);
+    }
     else FightForDraw();
 }
 const Starter2 = (index, PrvIndex) => {
