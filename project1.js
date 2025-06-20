@@ -7,7 +7,8 @@ let firstpage = document.querySelector(".FirstPage");
 let secondpage = document.querySelector(".SecondPage");
 let game = document.querySelector(".Game");
 let message = document.querySelector(".message");
-let newbtn = document.querySelector(".newbtn");
+let newbtn = document.querySelectorAll(".newbtn");
+let Result = document.querySelector(".Result");
 const reset = () => {
     moves = 0;
     PrvIndex = null;
@@ -281,28 +282,36 @@ const InputTaker = () => {
 }
 btns.forEach((btn, i) => {
     btn.addEventListener("click", () => {
-        console.log(gameturn);
         btnindex = i;
         firstpage.classList.add("hide");
-        newbtn.innerText = "Start Game";
         if(!i) {
             message.innerText = "Player1 Starts";
-            secondpage.classList.remove("hide");
         }
         else {
             message.innerText = "Player Starts";
-            secondpage.classList.remove("hide");
         }
-        newbtn.addEventListener("click", () => {
-                reset();
-                Enable();
-                messagebox.classList.add("hide");
-                newbtn.innerText = "New Game";
-                game.classList.remove("hide");
-                if(i === 1 && gameturn) {
-                    ComputerMove(0);
-                }
-                InputTaker();
-        });
+        secondpage.classList.remove("hide");
     });
 });
+newbtn.forEach((nbtn, k) => {
+    nbtn.addEventListener("click", () => {
+        reset();
+        Enable();
+        if(k === 1) {
+            game.classList.remove("hide");
+            messagebox.classList.add("hide");
+            nbtn.innerText = "New Game";
+            if(btnindex === 1 && gameturn) {
+                ComputerMove(0);
+            }
+            InputTaker();
+        }
+        else {
+            secondpage.classList.add("hide");
+            firstpage.classList.remove("hide");
+            newbtn[1].innerText = "Start Game";
+        }
+    });
+});
+
+
