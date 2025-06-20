@@ -1,37 +1,67 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 body {
     background-color: #112D4E;
     text-align: center;
     color: #F9F7F7;
+    font-family: Arial, sans-serif;
 }
+
 .MessageBox {
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
     background-color: #ECEFCA;
     color: #112D4E;
-}
-h1{
-    font-size: 12vh;
-}
-.GameBox {
-    height: 70vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+
+h1 {
+    font-size: 6vh;
+}
+
+.GameBox {
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
 .Board {
-    height: 60vh;
-    width: 60vh;
+    width: 90vw;
+    max-width: 400px;
+    aspect-ratio: 1;
     background-color: #112D4E;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding: 10px;
+}
+
+.Box {
+    width: 100%;
+    aspect-ratio: 1;
+    font-size: 8vmin;
+    background-color: #424242;
+    border-radius: 20px;
+    border: none;
+    color: #0ABAB5;
+    font-weight: 1000;
+    box-shadow: 0 0 10px black;
+}
+
+.Box:hover, #ResetButton:hover {
+    box-shadow: 0 0 5px #0ABAB5;
 }
 
 #ResetButton {
+    margin-top: 20px;
     height: 40px;
     width: 100px;
     border-radius: 10px;
@@ -41,22 +71,6 @@ h1{
     font-weight: bolder;
     border: none;
 }
-.Box {
-    height: 18vh;
-    width: 18vh;
-    font-size: 8vmin;
-    background-color: #424242;
-    justify-self: center;
-    align-self: center;
-    border-radius: 20px;
-    border: none;
-    color: #0ABAB5;
-    font-weight:1000;
-    box-shadow: 0 0 10px black;
-}
-.Box:hover, #ResetButton:hover {
-    box-shadow: 0 0 5px #0ABAB5;
-}
 
 .hide {
     display: none;
@@ -65,7 +79,8 @@ h1{
 .newbtn:hover, .btn:hover {
     box-shadow: 0 0 5px rgb(18, 21, 8);
 }
-.newbtn {
+
+.newbtn, .btn {
     height: 40px;
     width: 200px;
     border-radius: 10px;
@@ -74,41 +89,68 @@ h1{
     background-color: black;
     font-weight: bolder;
     border: none;
+    margin: 10px;
 }
+
 .IntroSection {
-    height: 80px;
-    font-size: 50px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
-    gap: 350px;
+    gap: 40px;
+    margin-top: 20px;
 }
-.btn {
-    height: 40px;
-    width: 200px;
-    border-radius: 10px;
-    font-size: 18px;
-    color: #ffffff;
-    background-color: black;
-    font-weight: bolder;
-    border: none;
-}
+
 .header {
-    height:350px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    height: auto;
+    padding: 20px;
 }
+
 .message {
-    height: 30vh;
+    height: auto;
     width: 100%;
     color: #112D4E;
 }
-.ResultSection{
-    height: 100vh;
+
+.ResultSection {
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    font-size: 12vh;
+    font-size: 6vh;
+    padding: 20px;
+}
+
+.home {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 20px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 5vh;
+    }
+    .btn, .newbtn {
+        width: 150px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 4vh;
+    }
+    .Board {
+        gap: 5px;
+    }
+    .Box {
+        font-size: 10vmin;
+    }
+    .ResultSection {
+        font-size: 4vh;
+    }
 }
