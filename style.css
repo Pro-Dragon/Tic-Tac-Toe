@@ -1,67 +1,37 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 body {
     background-color: #112D4E;
     text-align: center;
     color: #F9F7F7;
-    font-family: Arial, sans-serif;
 }
-
 .MessageBox {
-    min-height: 100vh;
+    height: 100vh;
     width: 100%;
     background-color: #ECEFCA;
     color: #112D4E;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
-
-h1 {
-    font-size: 6vh;
+h1{
+    font-size: 12vh;
 }
-
 .GameBox {
-    height: auto;
+    height: 70vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
 }
-
 .Board {
-    width: 90vw;
-    max-width: 400px;
-    aspect-ratio: 1;
+    height: 60vh;
+    width: 60vh;
     background-color: #112D4E;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    padding: 10px;
-}
-
-.Box {
-    width: 100%;
-    aspect-ratio: 1;
-    font-size: 8vmin;
-    background-color: #424242;
-    border-radius: 20px;
-    border: none;
-    color: #0ABAB5;
-    font-weight: 1000;
-    box-shadow: 0 0 10px black;
-}
-
-.Box:hover, #ResetButton:hover {
-    box-shadow: 0 0 5px #0ABAB5;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 #ResetButton {
-    margin-top: 20px;
     height: 40px;
     width: 100px;
     border-radius: 10px;
@@ -71,6 +41,22 @@ h1 {
     font-weight: bolder;
     border: none;
 }
+.Box {
+    height: 18vh;
+    width: 18vh;
+    font-size: 8vmin;
+    background-color: #424242;
+    justify-self: center;
+    align-self: center;
+    border-radius: 20px;
+    border: none;
+    color: #0ABAB5;
+    font-weight:1000;
+    box-shadow: 0 0 10px black;
+}
+.Box:hover, #ResetButton:hover {
+    box-shadow: 0 0 5px #0ABAB5;
+}
 
 .hide {
     display: none;
@@ -79,8 +65,7 @@ h1 {
 .newbtn:hover, .btn:hover {
     box-shadow: 0 0 5px rgb(18, 21, 8);
 }
-
-.newbtn, .btn {
+.newbtn {
     height: 40px;
     width: 200px;
     border-radius: 10px;
@@ -89,68 +74,98 @@ h1 {
     background-color: black;
     font-weight: bolder;
     border: none;
-    margin: 10px;
 }
-
 .IntroSection {
+    height: 80px;
+    font-size: 50px;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    gap: 40px;
-    margin-top: 20px;
+    align-items: center;
+    gap: 350px;
 }
-
+.btn {
+    height: 40px;
+    width: 200px;
+    border-radius: 10px;
+    font-size: 18px;
+    color: #ffffff;
+    background-color: black;
+    font-weight: bolder;
+    border: none;
+}
 .header {
-    height: auto;
-    padding: 20px;
+    height:350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-
 .message {
-    height: auto;
+    height: 30vh;
     width: 100%;
     color: #112D4E;
 }
-
-.ResultSection {
-    min-height: 100vh;
+.ResultSection{
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    font-size: 6vh;
-    padding: 20px;
+    font-size: 12vh;
 }
-
 .home {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 40px;
-    margin-top: 20px;
+    gap: 300px;
 }
-
-/* Media Queries */
-@media (max-width: 768px) {
-    h1 {
-        font-size: 5vh;
+@media (max-width : 450px) {
+    .header {
+        height:280px;
+        display: flex;
+        align-items: end;
+        justify-content: center;
     }
-    .btn, .newbtn {
-        width: 150px;
-        font-size: 16px;
-    }
-}
-
-@media (max-width: 480px) {
     h1 {
-        font-size: 4vh;
+        font-size: 6vh;
+    }
+    .IntroSection {
+        height: 80px;
+        font-size: 50px;
+        gap: 50px;
+    }
+    .btn {
+        height: 3.5vh;
+        width: 110px;
+        border-radius: 6px;
+        font-size: 10px;
+    }
+    .ResultSection{
+        font-size: 8vh;
+    }
+    .message {
+        height:80px;
+        font-size: 46px;
+    }
+    .newbtn {
+        height: 3.5vh;
+        width: 110px;
+        border-radius: 6px;
+        font-size: 10px;
+    }
+    .home {
+        gap: 50px;
     }
     .Board {
-        gap: 5px;
+        height: 50vh;
+        width: 50vh;
     }
     .Box {
-        font-size: 10vmin;
+        height: 15vh;
+        width: 15vh;
+        border-radius: 15px;
     }
-    .ResultSection {
-        font-size: 4vh;
+    #ResetButton {
+        height: 6vh;
+        width: 16vh;
+        border-radius: 8px;
+        font-size: 15px;
     }
 }
